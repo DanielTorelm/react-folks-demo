@@ -1,0 +1,80 @@
+:root {
+  --primary-color: hsla(119, 46%, 53%, 0.9);
+  --secondary-color: #222;
+ 
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  line-height: 2.8ex;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  text-shadow: var(--primary-color) 1px 0 5px;
+  
+  
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+::selection {
+  background-color: hsla(0, 0%, 97%, 0.9);
+  color: hsla(119, 46%, 53%, 0.5)
+}
+
+.folks-grid {
+  display: grid;
+  gap: 50px 12px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  perspective: 20px;
+}
+
+.folks-info-wrapper {
+  box-sizing: border-box;
+}
+
+.folks-image-resposive{
+  vertical-align: top;
+  width: 100%;
+  filter: (saturate(10%));
+  mask: url(scanlines.png) exclude alpha;
+}
+
+.folks-button-more {
+  box-sizing: border-box;
+  padding: 1rem;
+  font-weight: 700;
+  border: 1px solid var(--primary-color);
+  text-transform: uppercase;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.folks-button-more:hover {
+  cursor: pointer;
+}
+
+.folks-button-more:active {
+  outline: 2px solid var(--primary-color);
+  text-shadow: var(--primary-color) 1px 0 3px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .folks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .folks-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px 0;
+  }
+}
